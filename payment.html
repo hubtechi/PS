@@ -109,6 +109,15 @@ Pay Now
 </div>
 
 <script>
+window.onload = function(){
+
+    let packageName = localStorage.getItem("package");
+    let price = localStorage.getItem("price");
+
+    document.getElementById("package").innerText = packageName;
+    document.getElementById("price").innerText = price;
+
+    }
 
 function payNow(packageName, price){
 
