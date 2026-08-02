@@ -143,19 +143,24 @@ let network = document.querySelector('input[name="network"]:checked').value;
 let packageName = localStorage.getItem("package");
 let price = localStorage.getItem("price");
 
-document.getElementById("package").innerText = packageName;
-document.getElementById("price").innerText = price;
 
-alert(
+document.querySelector(".container").innerHTML = `
 
-"Payment Request\n\n"+
-"Package: "+packageName+
-"\nPrice: UGX "+price+
-"\nPhone: "+phone+
-"\nNetwork: "+network+
-"\n\nPayment processing..."
+<h2>Payment Request</h2>
 
-);
+<p>Package: <b>${packageName}</b></p>
+
+<p>Amount: <b>UGX ${price}</b></p>
+
+<p>Phone: <b>${phone}</b></p>
+
+<p>Network: <b>${network}</b></p>
+
+<br>
+
+<h3>Waiting for payment confirmation...</h3>
+
+`;
 
     }
 
