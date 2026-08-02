@@ -118,43 +118,32 @@ Continue
 
 <script>
 
-let selectedPackage="";
-let selectedPrice="";
+let selectedPackage = "";
+let selectedPrice = "";
 
-function selectPackage(card,time,price){
+function selectPackage(card, time, price){
 
-document.querySelectorAll(".package").forEach(item=>{
-item.classList.remove("selected");
-});
+    document.querySelectorAll(".package").forEach(item=>{
+        item.classList.remove("selected");
+    });
 
-card.classList.add("selected");
+    card.classList.add("selected");
 
-selectedPackage=time;
-selectedPrice=price;
-
+    selectedPackage = time;
+    selectedPrice = price;
 }
 
 function continuePayment(){
 
-if(selectedPackage==""){
-    alert("Please select a package.");
-    return;
-}
+    if(selectedPackage == ""){
+        alert("Please select a package.");
+        return;
+    }
 
-localStorage.setItem("package", selectedPackage);
-localStorage.setItem("price", selectedPrice);
+    localStorage.setItem("package", selectedPackage);
+    localStorage.setItem("price", selectedPrice);
 
-location.href = "./payment.html";
-
-}
-
-alert(
-"You selected:\n\n"+
-selectedPackage+
-"\nUGX "+selectedPrice+
-"\n\nNext page will request your phone number."
-);
-
+    window.location.href = "payment.html";
 }
 
 </script>
