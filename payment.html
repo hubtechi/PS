@@ -81,12 +81,36 @@ localStorage.getItem("price");
 
 function payNow(){
 
-let phone=document.getElementById("phone").value;
+let phone = document.getElementById("phone").value;
 
 if(phone==""){
     alert("Enter your phone number.");
     return;
 }
+
+let network =
+document.querySelector('input[name="network"]:checked').value;
+
+let packageName = localStorage.getItem("package");
+let price = localStorage.getItem("price");
+
+alert(
+
+"Payment Request\n\n"+
+
+"Package: "+packageName+
+
+"\nPrice: UGX "+price+
+
+"\nPhone: "+phone+
+
+"\nNetwork: "+network+
+
+"\n\nIn the next lesson this information will be sent to the payment server."
+
+);
+
+    }
 
 alert(
 "Payment request would now be sent to:\n"+
