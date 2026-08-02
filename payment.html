@@ -110,11 +110,15 @@ Pay Now
 
 <script>
 
-document.getElementById("package").innerHTML =
-localStorage.getItem("package");
+function payNow(packageName, price){
 
-document.getElementById("price").innerHTML =
-localStorage.getItem("price");
+    document.getElementById("paymentModal").style.display = "block";
+
+    document.getElementById("selectedPackage").innerText = packageName;
+
+    document.getElementById("selectedPrice").innerText = "UGX " + price;
+
+}
 
 function payNow(){
 
