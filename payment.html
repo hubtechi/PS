@@ -129,36 +129,26 @@ if(phone==""){
     return;
 }
 
-let network =
-document.querySelector('input[name="network"]:checked').value;
+let network = document.querySelector('input[name="network"]:checked').value;
 
 let packageName = localStorage.getItem("package");
 let price = localStorage.getItem("price");
 
+document.getElementById("package").innerText = packageName;
+document.getElementById("price").innerText = price;
+
 alert(
 
 "Payment Request\n\n"+
-
 "Package: "+packageName+
-
 "\nPrice: UGX "+price+
-
 "\nPhone: "+phone+
-
 "\nNetwork: "+network+
-
-"\n\nIn the next lesson this information will be sent to the payment server."
+"\n\nPayment processing..."
 
 );
 
     }
-
-alert(
-"Payment request would now be sent to:\n"+
-phone
-);
-
-}
 
 </script>
 
