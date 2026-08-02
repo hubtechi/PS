@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>PERKS WiFi</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#111;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    color:white;
+}
+
+.container{
+    width:90%;
+    max-width:450px;
+    background:#1b1b1b;
+    padding:30px;
+    border-radius:20px;
+    text-align:center;
+    box-shadow:0 0 25px rgba(0,0,0,.5);
+}
+
+h1{
+    margin-bottom:10px;
+}
+
+p{
+    color:#bbb;
+    margin-bottom:25px;
+}
+
+.package{
+    background:#252525;
+    padding:18px;
+    border-radius:15px;
+    margin-bottom:15px;
+    cursor:pointer;
+    transition:.3s;
+    border:2px solid transparent;
+}
+
+.package:hover{
+    background:#333;
+}
+
+.package.selected{
+    border-color:#00ff88;
+}
+
+.price{
+    font-size:24px;
+    color:#00ff88;
+    margin-top:8px;
+}
+
+button{
+    width:100%;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    background:#00ff88;
+    color:black;
+    font-size:18px;
+    font-weight:bold;
+    cursor:pointer;
+    margin-top:20px;
+}
+
+button:hover{
+    background:#00dd77;
+}
+
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+<h1>PERKS WiFi</h1>
+
+<p>Select your internet package</p>
+
+<div class="package" onclick="selectPackage(this,'30 Minutes','1000')">
+<h2>30 Minutes</h2>
+<div class="price">UGX 1,000</div>
+</div>
+
+<div class="package" onclick="selectPackage(this,'2 Hours','2500')">
+<h2>2 Hours</h2>
+<div class="price">UGX 2,500</div>
+</div>
+
+<div class="package" onclick="selectPackage(this,'24 Hours','5000')">
+<h2>24 Hours</h2>
+<div class="price">UGX 5,000</div>
+</div>
+
+<button onclick="continuePayment()">
+Continue
+</button>
+
+</div>
+
+<script>
+
+let selectedPackage="";
+let selectedPrice="";
+
+function selectPackage(card,time,price){
+
+document.querySelectorAll(".package").forEach(item=>{
+item.classList.remove("selected");
+});
+
+card.classList.add("selected");
+
+selectedPackage=time;
+selectedPrice=price;
+
+}
+
+function continuePayment(){
+
+if(selectedPackage==""){
+alert("Please select a package.");
+return;
+}
+
+alert(
+"You selected:\n\n"+
+selectedPackage+
+"\nUGX "+selectedPrice+
+"\n\nNext page will request your phone number."
+);
+
+}
+
+</script>
+
+</body>
+</html>
