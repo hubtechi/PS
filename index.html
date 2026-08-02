@@ -137,8 +137,15 @@ selectedPrice=price;
 function continuePayment(){
 
 if(selectedPackage==""){
-alert("Please select a package.");
-return;
+    alert("Please select a package.");
+    return;
+}
+
+localStorage.setItem("package", selectedPackage);
+localStorage.setItem("price", selectedPrice);
+
+window.location.href="payment.html";
+
 }
 
 alert(
